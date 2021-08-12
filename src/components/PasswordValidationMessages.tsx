@@ -1,7 +1,10 @@
 import React, { ReactElement } from "react";
 import CheckCircle from "../icons/CheckCircle";
 import TimesCircle from "../icons/TimesCircle";
-import { PasswordMessages, PasswordValidation } from "../passwordValidator";
+import {
+  PasswordMessages,
+  PasswordValidation,
+} from "../validators/passwordValidator";
 
 interface Props {
   passwordValidationStatus: {

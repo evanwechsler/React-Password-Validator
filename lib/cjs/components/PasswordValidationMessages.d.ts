@@ -1,10 +1,12 @@
 import { ReactElement } from "react";
-import { PasswordLevels, PasswordMessages } from "../passwordValidator";
+import { PasswordMessages, PasswordValidation } from "../validators/passwordValidator";
 interface Props {
-    messages: PasswordMessages;
-    validated: PasswordLevels;
+    passwordValidationStatus: {
+        passwordValidation: PasswordValidation;
+        messages: PasswordMessages;
+    };
     validIcon?: JSX.Element;
     invalidIcon?: JSX.Element;
 }
-export default function PasswordValidationMessages({ messages, validated, validIcon, invalidIcon, }: Props): ReactElement;
+export default function PasswordValidationMessages({ validIcon, invalidIcon, passwordValidationStatus, }: Props): ReactElement;
 export {};
