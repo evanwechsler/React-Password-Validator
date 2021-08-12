@@ -1,4 +1,5 @@
 import PasswordValidationMessages from "./components/PasswordValidationMessages";
-import { PasswordValidator } from "./passwordValidator";
+import usePasswordValidator from "./hooks/usePasswordValidator";
+import { PasswordValidator } from "./validators/passwordValidator";
 
-export { PasswordValidator, PasswordValidationMessages };
+export { PasswordValidator, PasswordValidationMessages, usePasswordValidator };

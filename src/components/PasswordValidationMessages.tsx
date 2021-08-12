@@ -1,27 +1,33 @@
 import React, { ReactElement } from "react";
 import CheckCircle from "../icons/CheckCircle";
 import TimesCircle from "../icons/TimesCircle";
-import { PasswordLevels, PasswordMessages } from "../passwordValidator";
+import { PasswordMessages, PasswordValidation } from "../passwordValidator";
 
 interface Props {
-  messages: PasswordMessages;
-  validated: PasswordLevels;
+  passwordValidationStatus: {
+    passwordValidation: PasswordValidation;
+    messages: PasswordMessages;
+  };
   validIcon?: JSX.Element;
   invalidIcon?: JSX.Element;
 }
 
 export default function PasswordValidationMessages({
-  messages,
-  validated,
   validIcon,
   invalidIcon,
+  passwordValidationStatus,
 }: Props): ReactElement {
+  const {
+    messages,
+    passwordValidation: { passwordLevels },
+  } = passwordValidationStatus;
+
   return (
     <div className="password-messages">
       {Object.keys(messages).map((key) => {
         const messageKey = key as keyof typeof messages;
-        const validatedKey = key as keyof typeof validated;
-        const isValid = validated[validatedKey];
+        const validatedConditionKey = key as keyof typeof passwordLevels;
+        const isValid = passwordLevels[validatedConditionKey];
         return (
           <div key={messageKey} className={isValid ? "valid" : "invalid"}>
             {isValid

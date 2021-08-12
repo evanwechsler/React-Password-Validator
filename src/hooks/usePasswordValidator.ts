@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { PasswordValidator } from "..";
-import { PasswordMessages, PasswordValidation } from "../passwordValidator";
+import {
+  PasswordMessages,
+  PasswordValidation,
+} from "../validators/passwordValidator";
 
 export default function usePasswordValidator(
   password: string,
