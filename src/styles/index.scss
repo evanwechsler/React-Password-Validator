@@ -1,0 +1,25 @@
+.password-messages {
+    $contentWidth: 90%;
+    $fieldSpacing: 1em;
+    $invalidColor: #f10ebc;
+    $validColor: #2cc7de;
+    text-align: left;
+    width: $contentWidth;
+    margin: $fieldSpacing;
+    padding-left: 1em;
+    .valid {
+        svg {
+            color: $validColor;
+        }
+    }
+    .invalid {
+        color: $invalidColor;
+    }
+    >div {
+        display: flex;
+        align-items: center;
+        svg {
+            margin-right: 0.3em;
+        }
+    }
+}
