@@ -7,7 +7,7 @@ import {
 
 export default function usePasswordValidator(
   password: string,
-  passwordStrength: number = 5
+  passwordStrength?: number
 ) {
   const passwordValidator = new PasswordValidator(passwordStrength);
   const messages = passwordValidator.getMessages();
@@ -25,7 +25,6 @@ export default function usePasswordValidator(
       ...passwordValidationStatus,
       passwordValidation,
     });
-    console.log(passwordValidation);
   }, [password]);
 
   return passwordValidationStatus;

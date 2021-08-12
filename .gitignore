@@ -1,5 +1,5 @@
 node_modules/
-dist/
+build
 
 # Example project files
 /example/node_modules

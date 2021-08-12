@@ -8,7 +8,7 @@ import {
 function App() {
   const [password, setPassword] = useState("");
   const [isFocused, toggleFocus] = useState(false);
-  const passwordValidationStatus = usePasswordValidator(password);
+  const passwordValidationStatus = usePasswordValidator(password, 3);
   return (
     <div className="App" style={{ display: "grid", placeItems: "center" }}>
       <div
@@ -21,15 +21,15 @@ function App() {
           onFocus={() => toggleFocus(true)}
           onBlur={() => toggleFocus(false)}
         />
-        {isFocused && (
+        {(password.length > 0 || isFocused) && (
           <PasswordValidationMessages
             passwordValidationStatus={passwordValidationStatus}
           />
         )}
         {passwordValidationStatus.passwordValidation.validated ? (
-          <h3 style={{ color: "#00e582" }}>Valid</h3>
+          <div className="is-valid valid">Valid</div>
         ) : (
-          <h3 style={{ color: "#ff0a80" }}>Invalid</h3>
+          <div className="is-valid invalid">Invalid</div>
         )}
       </div>
     </div>

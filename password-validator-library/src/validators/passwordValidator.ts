@@ -84,28 +84,46 @@ export class PasswordValidator {
         `The password entered was too long. Please keep it under ${this.maxLength} characters.`
       );
     }
-    if (this.strengthLevel > 0 && password.length > this.minLength) {
-      passwordValidation.passwordLevels.length = true;
+    if (this.strengthLevel > 0) {
+      if (password.length > this.minLength) {
+        passwordValidation.passwordLevels.length = true;
+      } else {
+        passwordValidation.passwordLevels.length = false;
+      }
     }
 
     const lowercaseLettersRegex = /(?=.*[a-z])/;
-    if (this.strengthLevel > 1 && lowercaseLettersRegex.test(password)) {
-      passwordValidation.passwordLevels.lowercaseLetters = true;
+    if (this.strengthLevel > 1) {
+      if (lowercaseLettersRegex.test(password)) {
+        passwordValidation.passwordLevels.lowercaseLetters = true;
+      } else {
+        passwordValidation.passwordLevels.lowercaseLetters = false;
+      }
     }
 
     const uppercaseLettersRegex = /(?=.*[A-Z])/;
-    if (this.strengthLevel > 2 && uppercaseLettersRegex.test(password)) {
-      passwordValidation.passwordLevels.uppercaseLetters = true;
+    if (this.strengthLevel > 2) {
+      if (uppercaseLettersRegex.test(password)) {
+        passwordValidation.passwordLevels.uppercaseLetters = true;
+      }
     }
 
     const digitsRegex = /(?=.*\d)/;
-    if (this.strengthLevel > 3 && digitsRegex.test(password)) {
-      passwordValidation.passwordLevels.digits = true;
+    if (this.strengthLevel > 3) {
+      if (digitsRegex.test(password)) {
+        passwordValidation.passwordLevels.digits = true;
+      } else {
+        passwordValidation.passwordLevels.digits = false;
+      }
     }
 
     const specialCharactersRegex = /(?=.*\W)/;
-    if (this.strengthLevel > 4 && specialCharactersRegex.test(password)) {
-      passwordValidation.passwordLevels.specialCharacters = true;
+    if (this.strengthLevel > 4) {
+      if (specialCharactersRegex.test(password)) {
+        passwordValidation.passwordLevels.specialCharacters = true;
+      } else {
+        passwordValidation.passwordLevels.specialCharacters = false;
+      }
     }
 
     // Check if password meets strength requirements

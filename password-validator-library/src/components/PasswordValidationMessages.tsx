@@ -35,8 +35,8 @@ export default function PasswordValidationMessages({
         return (
           <div key={messageKey} className={isValid ? "valid" : "invalid"}>
             {isValid
-              ? validIcon ?? <CheckCircle />
-              : invalidIcon ?? <TimesCircle />}
+              ? validIcon ?? <CheckCircle width="1em" height="1em" />
+              : invalidIcon ?? <TimesCircle width="1em" height="1em" />}
             {messages[messageKey]}
           </div>
         );
