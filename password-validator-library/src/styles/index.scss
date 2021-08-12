@@ -1,0 +1,22 @@
+$fontSize: 16px;
+$inputBorder: 1px solid #dddfee;
+$focusBorder: 2px solid $colorAccent;
+$borderRadius: 8px;
+$contentWidth: 90%;
+$size: 3em;
+$fieldSpacing: 1em;
+$invalidColor: #f10ebc;
+$validColor: #2cc7de;
+@mixin input {
+    border-radius: $borderRadius;
+    font-size: $fontSize;
+    padding: 0 1em;
+    margin-top: $fieldSpacing;
+    border: $inputBorder;
+    width: $contentWidth;
+    height: $size;
+    &:focus {
+        border: $focusBorder;
+        outline: none;
+    }
+}

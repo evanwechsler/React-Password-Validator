@@ -24,6 +24,7 @@ function usePasswordValidator(password, passwordStrength) {
     react_1.useEffect(function () {
         var passwordValidation = passwordValidator.validatePassword(password);
         setPasswordValidationStatus(__assign(__assign({}, passwordValidationStatus), { passwordValidation: passwordValidation }));
+        console.log(passwordValidation);
     }, [password]);
     return passwordValidationStatus;
 }

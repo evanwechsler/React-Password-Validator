@@ -5,6 +5,7 @@ import {
   PasswordMessages,
   PasswordValidation,
 } from "../validators/passwordValidator";
+import "../styles/passwordMessages.scss";
 
 interface Props {
   passwordValidationStatus: {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Eye from "../icons/Eye";
 import EyeSlash from "../icons/EyeSlash";
+import "../styles/password.scss";
 
 interface Props extends React.HTMLProps<HTMLInputElement> {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;

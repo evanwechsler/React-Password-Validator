@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/password.scss";
 interface Props extends React.HTMLProps<HTMLInputElement> {
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     eyeIcon?: JSX.Element;

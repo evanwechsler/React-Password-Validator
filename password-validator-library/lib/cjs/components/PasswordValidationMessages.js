@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var CheckCircle_1 = __importDefault(require("../icons/CheckCircle"));
 var TimesCircle_1 = __importDefault(require("../icons/TimesCircle"));
+require("../styles/passwordMessages.scss");
 function PasswordValidationMessages(_a) {
     var validIcon = _a.validIcon, invalidIcon = _a.invalidIcon, passwordValidationStatus = _a.passwordValidationStatus;
     var messages = passwordValidationStatus.messages, passwordLevels = passwordValidationStatus.passwordValidation.passwordLevels;

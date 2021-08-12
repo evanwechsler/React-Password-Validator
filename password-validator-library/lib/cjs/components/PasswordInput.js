@@ -47,6 +47,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var Eye_1 = __importDefault(require("../icons/Eye"));
 var EyeSlash_1 = __importDefault(require("../icons/EyeSlash"));
+require("../styles/password.scss");
 function PasswordInput(_a) {
     var onChange = _a.onChange, eyeIcon = _a.eyeIcon, eyeSlashIcon = _a.eyeSlashIcon, rest = __rest(_a, ["onChange", "eyeIcon", "eyeSlashIcon"]);
     var _b = react_1.useState(true), hidden = _b[0], setHidden = _b[1];

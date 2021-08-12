@@ -23,6 +23,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 import React, { useState } from "react";
 import Eye from "../icons/Eye";
 import EyeSlash from "../icons/EyeSlash";
+import "../styles/password.scss";
 export default function PasswordInput(_a) {
     var onChange = _a.onChange, eyeIcon = _a.eyeIcon, eyeSlashIcon = _a.eyeSlashIcon, rest = __rest(_a, ["onChange", "eyeIcon", "eyeSlashIcon"]);
     var _b = useState(true), hidden = _b[0], setHidden = _b[1];

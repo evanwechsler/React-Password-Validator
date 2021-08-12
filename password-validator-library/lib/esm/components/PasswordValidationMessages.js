@@ -1,6 +1,7 @@
 import React from "react";
 import CheckCircle from "../icons/CheckCircle";
 import TimesCircle from "../icons/TimesCircle";
+import "../styles/passwordMessages.scss";
 export default function PasswordValidationMessages(_a) {
     var validIcon = _a.validIcon, invalidIcon = _a.invalidIcon, passwordValidationStatus = _a.passwordValidationStatus;
     var messages = passwordValidationStatus.messages, passwordLevels = passwordValidationStatus.passwordValidation.passwordLevels;

@@ -25,6 +25,7 @@ export default function usePasswordValidator(
       ...passwordValidationStatus,
       passwordValidation,
     });
+    console.log(passwordValidation);
   }, [password]);
 
   return passwordValidationStatus;
