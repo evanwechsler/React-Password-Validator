@@ -5,30 +5,30 @@ Simple password validator and React UI components with typescript support
 # Installation
 
 ```console
-$ npm i react-pwd-validator
+npm i react-pwd-validator
 ```
 
 or
 
 ```console
-$ yarn add react-pwd-validator
+yarn add react-pwd-validator
 ```
 
 # Features
 
-- (PasswordValidator)[https://github.com/evanwechsler/React-Password-Validator/blob/master/password-validator-library/src/validators/passwordValidator.ts] class with multiple configuration options
-- (PasswordInput)[https://github.com/evanwechsler/React-Password-Validator/blob/master/password-validator-library/src/components/PasswordInput.tsx] UI component
-- (PasswordValidationMessages)[https://github.com/evanwechsler/React-Password-Validator/blob/master/password-validator-library/src/components/PasswordValidationMessages.tsx] UI component
+- [PasswordValidator][PasswordValidator] class with multiple configuration options
+- [PasswordInput][PasswordInput] UI component
+- [PasswordValidationMessage][PasswordValidationMessage] UI component
 
 # Validator
 
-The password validator (PasswordValidator)[https://github.com/evanwechsler/React-Password-Validator/blob/master/password-validator-library/src/validators/passwordValidator.ts] class is used to initialize a validator with varying levels of strength.
+The password validator [PasswordValidator][PasswordValidator] class is used to initialize a validator with varying levels of strength.
 
 Configurable Parameters:
 
 - Password strength (default is level 5)
-- Minimum password length (default is 8 based on (OWASP)[https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html#implement-proper-password-strength-controls] recommendations)
-- Maximum password length (default is 64 based on (OWASP)[https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html#implement-proper-password-strength-controls] recommendations)
+- Minimum password length (default is 8 based on [OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html#implement-proper-password-strength-controls) recommendations)
+- Maximum password length (default is 64 based on [OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html#implement-proper-password-strength-controls) recommendations)
 
 6 levels of password strength (each incremental level contains the restrictions of the previous levels):
 
@@ -138,3 +138,8 @@ console.log(passwordValidator.getMessages());
 ```
 
 # Password Input
+
+[PasswordValidator]: https://github.com/evanwechsler/React-Password-Validator/blob/master/password-validator-library/src/validators/passwordValidator.ts
+[PasswordInput]: https://github.com/evanwechsler/React-Password-Validator/blob/master/password-validator-library/src/components/PasswordInput.tsx
+[PasswordValidationMessages]: https://github.com/evanwechsler/React-Password-Validator/blob/master/password-validator-library/src/components/PasswordValidationMessages.tsx
+
