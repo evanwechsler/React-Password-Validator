@@ -186,7 +186,113 @@ const MyForm = () => {
 }
 ```
 
+# usePasswordValidator Hook
+This hooks is useful to manage the validatation state of a password. It is best used in combination with the [PasswordValidationMessages](#PasswordValidationMessages) UI component. The hook returns an object contaning a PasswordValidation object and a PasswordMessages object. You can pass in the same options as the PassordValidator class.
 
+```typescript
+function usePasswordValidator(password: string, passwordStrength?: number | undefined, minLength?: number | undefined, maxLength?: number | undefined): {
+    passwordValidation: PasswordValidation;
+    messages: PasswordMessages;
+}
+```
+
+## Usage
+```tsx
+import { useState } from "react";
+import {
+  PasswordInput,
+  usePasswordValidator,
+} from "react-pwd-validator";
+
+function App() {
+  const [password, setPassword] = useState("");
+  const passwordValidationStatus = usePasswordValidator(password);
+  
+  return (
+    <div>
+      <PasswordInput
+        placeholder="Password"
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      {passwordValidationStatus.passwordValidation.validated ?
+        // Something if password is validated
+        :
+        // Something if password is invalid
+      }
+    </div>
+  )
+}
+```
+
+# PasswordValidationMessages
+This UI components renders all of the password messages along with their current state.
+
+Example:
+```tsx
+import {
+  PasswordValidationMessages
+  usePasswordValidator,
+} from "react-pwd-validator";
+
+function App() {
+  const password = "Test"
+  const passwordValidationStatus = usePasswordValidator(password);
+  
+  return (
+    <div>
+      <PasswordValidationMessages
+        passwordValidationStatus={passwordValidationStatus}
+      />
+    </div>
+  )
+}
+```
+![Example of password validation messages UI component](https://github.com/evanwechsler/React-Password-Validator/blob/master/documentation/images/messages.png "PasswordValidationMessages")
+
+# Example of using everything together
+```tsx
+import React, { useState, useEffect } from "react";
+import {
+  PasswordInput,
+  PasswordValidationMessages,
+  usePasswordValidator,
+} from "react-password-validator";
+
+function App() {
+  const [password, setPassword] = useState("");
+  const [isFocused, toggleFocus] = useState(false);
+  const passwordValidationStatus = usePasswordValidator(password);
+  useEffect(() => {
+    console.log(passwordValidationStatus.messages);
+  }, [password]);
+  return (
+    <div className="App" style={{ display: "grid", placeItems: "center" }}>
+      <div
+        className="container"
+        style={{ display: "flex", flexDirection: "column" }}
+      >
+        <PasswordInput
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+          onFocus={() => toggleFocus(true)}
+          onBlur={() => toggleFocus(false)}
+        />
+        {(password.length > 0 || isFocused) && (
+          <PasswordValidationMessages
+            passwordValidationStatus={passwordValidationStatus}
+          />
+        )}
+        {passwordValidationStatus.passwordValidation.validated ? (
+          <div className="is-valid valid">Valid</div>
+        ) : (
+          <div className="is-valid invalid">Invalid</div>
+        )}
+      </div>
+    </div>
+  );
+}
+```
+![Example usage of all functions of package used together](https://github.com/evanwechsler/React-Password-Validator/blob/master/documentation/images/example.gif "Example usage")
 
 [PasswordValidator]: https://github.com/evanwechsler/React-Password-Validator/blob/master/password-validator-library/src/validators/passwordValidator.ts
 [PasswordInput]: https://github.com/evanwechsler/React-Password-Validator/blob/master/password-validator-library/src/components/PasswordInput.tsx
