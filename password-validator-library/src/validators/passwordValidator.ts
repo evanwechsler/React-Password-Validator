@@ -85,7 +85,7 @@ export class PasswordValidator {
       );
     }
     if (this.strengthLevel > 0) {
-      if (password.length > this.minLength) {
+      if (password.length >= this.minLength) {
         passwordValidation.passwordLevels.length = true;
       } else {
         passwordValidation.passwordLevels.length = false;

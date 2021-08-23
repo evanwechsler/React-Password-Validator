@@ -7,9 +7,15 @@ import {
 
 export default function usePasswordValidator(
   password: string,
-  passwordStrength?: number
+  passwordStrength?: number,
+  minLength?: number,
+  maxLength?: number
 ) {
-  const passwordValidator = new PasswordValidator(passwordStrength);
+  const passwordValidator = new PasswordValidator(
+    passwordStrength,
+    minLength,
+    maxLength
+  );
   const messages = passwordValidator.getMessages();
   const [passwordValidationStatus, setPasswordValidationStatus] = useState<{
     passwordValidation: PasswordValidation;
@@ -21,6 +27,7 @@ export default function usePasswordValidator(
 
   useEffect(() => {
     const passwordValidation = passwordValidator.validatePassword(password);
+
     setPasswordValidationStatus({
       ...passwordValidationStatus,
       passwordValidation,

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   PasswordInput,
   PasswordValidationMessages,
@@ -8,7 +8,10 @@ import {
 function App() {
   const [password, setPassword] = useState("");
   const [isFocused, toggleFocus] = useState(false);
-  const passwordValidationStatus = usePasswordValidator(password, 3);
+  const passwordValidationStatus = usePasswordValidator(password);
+  useEffect(() => {
+    console.log(passwordValidationStatus.messages);
+  }, [password]);
   return (
     <div className="App" style={{ display: "grid", placeItems: "center" }}>
       <div
