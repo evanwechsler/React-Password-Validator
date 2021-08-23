@@ -18,7 +18,7 @@ yarn add react-pwd-validator
 
 - [PasswordValidator][PasswordValidator] class with multiple configuration options
 - [PasswordInput][PasswordInput] UI component
-- [PasswordValidationMessage][PasswordValidationMessage] UI component
+- [PasswordValidationMessages][PasswordValidationMessages] UI component
 
 # Validator
 
