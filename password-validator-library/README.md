@@ -138,6 +138,55 @@ console.log(passwordValidator.getMessages());
 ```
 
 # Password Input
+![Password input with password text hidden](https://github.com/evanwechsler/React-Password-Validator/blob/master/documentation/images/password-hidden.png "Password input (hidden)")
+![Password input with password text visible](https://github.com/evanwechsler/React-Password-Validator/blob/master/documentation/images/password-visible.png "Password input (visible)")
+
+## Usage
+This UI component make is so that you can change the visibility of the input text. The most basic usage is as follows:
+```typescript
+import { PasswordInput } from "react-pwd-validator"
+
+const MyForm = () => {
+  return (
+    <PasswordInput placeholder="Password" />
+  )
+}
+```
+You able to change the eye icons by passing them into the component as props
+```typescript
+// Icons.tsx
+import React from "react";
+
+export const Eye = ({ ...props }: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg {...props}>
+      <path />
+    </svg>
+  );
+};
+
+export const EyeSlash = ({ ...props }: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg {...props}>
+      <path />
+    </svg>
+  );
+};
+```
+
+```typescript
+import { PasswordInput } from "react-pwd-validator"
+import { Eye, EyeSlash } from "./Icons"
+
+
+const MyForm = () => {
+  return (
+    <PasswordInput placeholder="Password" eyeIcon={Eye} eyeSlashIcon={EyeSlash}/>
+  )
+}
+```
+
+
 
 [PasswordValidator]: https://github.com/evanwechsler/React-Password-Validator/blob/master/password-validator-library/src/validators/passwordValidator.ts
 [PasswordInput]: https://github.com/evanwechsler/React-Password-Validator/blob/master/password-validator-library/src/components/PasswordInput.tsx
