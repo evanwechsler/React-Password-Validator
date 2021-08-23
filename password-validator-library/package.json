@@ -2,6 +2,11 @@
     "name": "react-pwd-validator",
     "version": "1.0.1",
     "description": "Password validator and ui components for react",
+    "keywords": [
+        "react",
+        "password",
+        "password validation"
+    ],
     "main": "build/index.js",
     "types": "build/index.d.ts",
     "module": "build/index.esm.js",
